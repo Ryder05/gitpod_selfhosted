@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: https-certificates
+spec:
+  secretName: https-certificates
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+  dnsNames:
+    - oc-perf.eu
+    - ".oc-perf.eu"
+    - "*.ws.oc-perf.eu"
